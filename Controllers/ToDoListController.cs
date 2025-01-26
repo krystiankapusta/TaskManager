@@ -7,14 +7,9 @@ using Project_ToDoList.Models;
 
 namespace Project_ToDoList.Controllers
 {
-   
+    [Authorize]
     public class ToDoListController : Controller
     {
-        //public IActionResult Index()
-        //{
-        //    return View();
-        //}
-
         private readonly DBContextSample _context;
 
         public ToDoListController(DBContextSample context)

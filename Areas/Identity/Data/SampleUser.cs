@@ -8,7 +8,6 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Project_ToDoList.Areas.Identity.Data;
 
-// Add profile data for application users by adding properties to the SampleUser class
 public class SampleUser : IdentityUser
 {
     [Required]

@@ -1,50 +1,46 @@
-﻿# Dokumentacja aplikacji Task manager
+﻿# Task manager Documentation
 
-## Informacje o projekcie
+## About the project
 
-Aplikacja "Task manager" została napisana w języku C# z użyciem technologii ASP.NET oraz bazy danych MS SQL.
+The "Task manager" application is written in C# language using ASP.NET technology and an MS SQL database.
 
-
-## Funckjonalności
-Rejestracja konta:
+## Functionality
+Account registration:
 
 ![Alt text](Documentation/images/register.png)
 
-
-Logowanie:
+Login:
 
 ![Alt text](Documentation/images/login.png)
 
-Zarejestrowany użytkownik po uwczesnym zalogowaniu, ma możliwość wyświetlania listy zadań oraz może utworzyć nowe zadanie
+A registered user, after logging in, can view the task list and create new tasks.
 
 ![Alt text](Documentation/images/tasks_list.png)
 
-Tworzenie nowego zadania:
+Creating a new task:
 
 ![Alt text](Documentation/images/create.png)
 
-Edycja utworzonego zadania:
+Editing a task:
 
 ![Alt text](Documentation/images/edit.png)
 
 ![Alt text](Documentation/images/after_edit.png)
 
-Usuwanie zadania:
+Deleting a task:
 
 ![Alt text](Documentation/images/delete.png)
 
 ![Alt text](Documentation/images/after_delete.png)
 
-## Logika
+## Logic
 
-Za obsługę rejestracji, logowania i ciasteczek odpowiada moduł "Identity". Wprowadzone dane logowania użytkowników są
-przetrzymywane w bazie danych w tabeli "dbo.AspNetUsers".
-Niezalogowany użytkownik nie ma dostępu do zarzadzania funkcjonalnościami aplikacji, gdyż wymuszana jest konieczność logowania.
+The "Identity" module handles registration, login and cookies. User login data is stored in the database in the [dbo.AspNetUsers] table.
 
-Każde zadanie z listy jest tworzone przy pomocy modelu ToDoList.cs, gdzie wszystkie informacje są przetrzymywane w bazie danych
-w tabeli: dbo.ToDoList. Za wyświetlanie danych, tworzenie, edycję bądź usuwanie zadania z bazy danych odpowiada
-kontroler ToDoListController.cs
+An unauthenticated user does not have access to the application's management functionalities, as login is required.
 
-* Zawartość modelu [ToDoList.cs](Models/ToDoList.cs)
-* Zawartość kontrolera [ToDoListController.cs](Controllers/ToDoListController.cs)
-* Schemat bazy danych [Script.sql](Documentation/script.sql)
+Each task in the list is created using the **ToDoList.cs** model, where all information is stored in the database in the [dbo.ToDoList] table. The **ToDoListController.cs** controller is responsible for displaying data, creating, editing and deleting tasks in the database.
+
+* **Model content:** [ToDoList.cs](Models/ToDoList.cs)
+* **Controller content:** [ToDoListController.cs](Controllers/ToDoListController.cs)
+* **Database schema:** [Script.sql](Documentation/script.sql)
